@@ -1,0 +1,13 @@
+* {
+  font-family: sans-serif;
+  font-size: 14px;
+}
+
+window#waybar {
+  background: #222;
+  color: #eee;
+}
+
+#clock, #cpu, #memory {
+  padding: 0 10px;
+}
