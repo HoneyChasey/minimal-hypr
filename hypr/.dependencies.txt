@@ -1,0 +1,4 @@
+xwg-displays = sudo pacman -S nwg-displays 
+waylbar = sudo pacman -S waybar
+hyperpaper = sudo pacman -S hyperpaper
+hyprlauncher = sudo pacman -S hyprlauncher
