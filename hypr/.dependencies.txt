@@ -2,3 +2,15 @@ xwg-displays = sudo pacman -S nwg-displays
 waylbar = sudo pacman -S waybar
 hyperpaper = sudo pacman -S hyperpaper
 hyprlauncher = sudo pacman -S hyprlauncher
+
+
+Font
+Do this commands to dl and install font on your system.
+
+
+wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/CascadiaCode.zip
+mkdir -p ~/.local/share/fonts/CascadiaCode
+unzip CascadiaCode.zip -d ~/.local/share/fonts/CascadiaCode
+fc-cache -fv
+
+And reload the waybar.
