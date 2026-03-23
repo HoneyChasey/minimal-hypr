@@ -1,9 +1,9 @@
-# minimal-hypr
-Minimal config hyprland for arch based distro
-
 <div align="center">
     <img alt="minimal-hypr logo" src="https://github.com/HoneyChasey/minimal-hypr/blob/main/.github/assets/logo.png" width="120px"/>
 </div>
+
+# minimal-hypr
+Minimal config hyprland for arch based distro
 
 Copy hypr folder into: 
 ```sh 
