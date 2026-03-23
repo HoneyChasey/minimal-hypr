@@ -1,6 +1,10 @@
 # minimal-hypr
 Minimal config hyprland for arch based distro
 
+<div align="center">
+    <img alt="nixy logo" src="https://github.com/HoneyChasey/minimal-hypr/tree/main/.github/assets/logo.png" width="120px" />
+</div>
+
 Copy hypr folder into: 
 ```sh 
 ~/.config/hypr
