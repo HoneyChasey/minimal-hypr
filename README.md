@@ -21,9 +21,9 @@ go to hypaper.conf, set the default variable asked (CHANGEME default value)
 
 ## TODO 
 
-- Create shell script for install dependencies for the system
-- Finish the waybar structure (some module not working idk why)
-- Start the css for the waybar 
-- Find the way to add autoclok at x time 
-- Add on the waybar a button to go to sleep or keybind  (already on super + m)
-- Maybe using ssdm's hyprland
+- Create shell script for install dependencies for the system -> not started 
+- Finish the waybar structure (some module not working idk why) -> ok
+- Start the css for the waybar  -> not started
+- Find the way to add autoclok at x time  -> not started
+- Add on the waybar a button to go to sleep or keybind  -> ok (already on super + m)
+- Maybe using ssdm's hyprland -> not started and need to dl hyprlock
