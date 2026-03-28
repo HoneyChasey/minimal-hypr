@@ -55,7 +55,7 @@
       "window-rewrite-default": "",
       "window-rewrite":{
         "class<firefox>": "󰈹",
-        "class<kitty>": "", // or  idk now
+        "class<com.mitchellh.ghostty>": "", // or  idk now
         "title<.*nvim.*>": "",
         "class<discord>": "", //to be tested  //#TODO 
         "class<vscodium>": "" //to be tested  //#TODO
