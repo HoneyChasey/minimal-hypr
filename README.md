@@ -14,6 +14,12 @@ and waybar folder into
 ```sh 
 ~/.config/waybar
 ```
+and default wallpaper to 
+
+```sh 
+~/Documents/wallappers/
+```
+but change it if you don't like the default path
 
 ## For hypaper 
 
