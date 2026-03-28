@@ -27,3 +27,4 @@ go to hypaper.conf, set the default variable asked (CHANGEME default value)
 - Find the way to add autoclok at x time  -> not started
 - Add on the waybar a button to go to sleep or keybind  -> ok (already on super + m)
 - Maybe using ssdm's hyprland -> not started and need to dl hyprlock
+- Adding shortcut for brightnest and volume on fn keyboard
