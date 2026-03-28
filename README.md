@@ -34,3 +34,4 @@ go to hypaper.conf, set the default variable asked (CHANGEME default value)
 - Add on the waybar a button to go to sleep or keybind  -> ok (already on super + m)
 - Maybe using ssdm's hyprland -> not started and need to dl hyprlock
 - Adding shortcut for brightnest and volume on fn keyboard
+- Fix on the waybar, the logo for the file manager 
