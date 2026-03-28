@@ -57,7 +57,7 @@
         "class<firefox>": "󰈹",
         "class<com.mitchellh.ghostty>": "", // or  idk now
         "title<.*nvim.*>": "",
-        "class<discord>": "", //to be tested  //#TODO 
+        "class<discord>": "", 
         "class<vscodium>": "" //to be tested  //#TODO
       }
     },
