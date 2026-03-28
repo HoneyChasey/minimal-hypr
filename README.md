@@ -17,7 +17,7 @@ and waybar folder into
 and default wallpaper to 
 
 ```sh 
-~/Documents/wallappers/
+~/Documents/wallppers/
 ```
 but change it if you don't like the default path
 
