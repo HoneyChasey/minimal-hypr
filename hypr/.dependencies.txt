@@ -3,7 +3,10 @@ waylbar = sudo pacman -S waybar
 hyperpaper = sudo pacman -S hyperpaper
 hyprlauncher = sudo pacman -S hyprlauncher
 ghostty = sudo pacman -S ghostty
-
+Advenced Linux Sound Architecture = pacman -S alsa-utils
+pulse audio = pacman -S pulseaudio # Check https://wiki.archlinux.org/title/PulseAudio#Installation
+brightness control = sudo pacman -S brightnessctl 
+Sound open firemware = sudo pacman -S sof-firmware # Please check before the readme before the installation of the firemware
 
 Font
 Do this commands to dl and install font on your system.
