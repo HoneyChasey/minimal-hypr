@@ -1,5 +1,5 @@
 xwg-displays = sudo pacman -S nwg-displays 
-waylbar = sudo pacman -S waybar
+waybar = sudo pacman -S waybar
 hyperpaper = sudo pacman -S hyprpaper
 hyprlauncher = sudo pacman -S hyprlauncher
 ghostty = sudo pacman -S ghostty
