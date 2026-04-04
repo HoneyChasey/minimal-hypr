@@ -7,6 +7,7 @@ Advenced Linux Sound Architecture = pacman -S alsa-utils
 pulse audio = pacman -S pulseaudio # Check https://wiki.archlinux.org/title/PulseAudio#Installation
 brightness control = sudo pacman -S brightnessctl 
 Sound open firemware = sudo pacman -S sof-firmware # Please check before the readme before the installation of the firemware
+Zen Browser = flatpak install flathub app.zen_browser.zen
 
 Font
 Do this commands to dl and install font on your system.

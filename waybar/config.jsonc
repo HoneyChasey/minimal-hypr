@@ -54,7 +54,8 @@
       "format-windows-seperator": " ",
       "window-rewrite-default": "",
       "window-rewrite":{
-        "class<firefox>": "󰈹",
+        "class<.*zen.*>": "",
+        "class<firefox>": "", // if y wanna choose firefox as default browser
         "class<com.mitchellh.ghostty>": "", // or  idk now
         "title<.*nvim.*>": "",
         "class<discord>": "", 
@@ -203,7 +204,7 @@
       "format-paused": "{status_icon}  {title}", 
       "player-icons": { // wayland conviention wtf https://github.com/Alexays/Waybar/wiki/Module:-MPRIS
         "default": "",
-        "firefox": "",
+        "zen-browser": "",
         "chrome": ""
       },
       "status-icons": { // same here, convetion wayland
