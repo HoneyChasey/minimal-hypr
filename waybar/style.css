@@ -1,0 +1,143 @@
+/* ── Reset ───────────────────────────────────────────────── */
+* {
+  border: none;
+  border-radius: 0;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 13px;
+  min-height: 0;
+}
+
+/* ── Barre principale ────────────────────────────────────── */
+window#waybar {
+  background: transparent;
+  color: #cdd6f4;
+}
+
+window#waybar > box {
+  background: rgba(17, 17, 27, 0.85);
+  border-radius: 14px;
+  margin: 6px 10px;
+  padding: 0 6px;
+  border: 1px solid rgba(205, 214, 244, 0.08);
+}
+
+/* ── Modules communs ─────────────────────────────────────── */
+#custom-distro,
+#clock,
+#workspaces,
+#mpris,
+#pulseaudio,
+#cpu,
+#memory,
+#battery {
+  background: rgba(30, 30, 46, 0.7);
+  border-radius: 10px;
+  padding: 4px 12px;
+  margin: 4px 3px;
+  color: #cdd6f4;
+  border: 1px solid rgba(205, 214, 244, 0.07);
+}
+
+/* ── Distro icon ─────────────────────────────────────────── */
+#custom-distro {
+  font-size: 16px;
+  color: #89b4fa;
+  padding: 4px 10px;
+}
+
+/* ── Clock ───────────────────────────────────────────────── */
+#clock {
+  color: #cba6f7;
+  font-weight: 600;
+}
+
+/* ── Workspaces ──────────────────────────────────────────── */
+#workspaces {
+  padding: 4px 6px;
+}
+
+#workspaces button {
+  background: transparent;
+  color: #6c7086;
+  border-radius: 8px;
+  padding: 2px 8px;
+  margin: 0 2px;
+  font-size: 12px;
+}
+
+#workspaces button:hover {
+  background: rgba(137, 180, 250, 0.12);
+  color: #cdd6f4;
+}
+
+#workspaces button.active {
+  background: rgba(137, 180, 250, 0.18);
+  color: #89b4fa;
+  font-weight: 600;
+}
+
+#workspaces button.urgent {
+  background: rgba(243, 139, 168, 0.2);
+  color: #f38ba8;
+}
+
+/* ── MPRIS ───────────────────────────────────────────────── */
+#mpris {
+  color: #a6e3a1;
+}
+
+/* ── Pulseaudio ──────────────────────────────────────────── */
+#pulseaudio {
+  color: #89b4fa;
+}
+
+#pulseaudio.muted {
+  color: #6c7086;
+}
+
+/* ── CPU ─────────────────────────────────────────────────── */
+#cpu {
+  color: #fab387;
+}
+
+#cpu.warning  { color: #f9e2af; }
+#cpu.critical { color: #f38ba8; }
+
+/* ── Memory ──────────────────────────────────────────────── */
+#memory {
+  color: #94e2d5;
+}
+
+#memory.warning  { color: #f9e2af; }
+#memory.critical { color: #f38ba8; }
+
+/* ── Battery ─────────────────────────────────────────────── */
+#battery {
+  color: #a6e3a1;
+}
+
+#battery.charging {
+  color: #a6e3a1;
+}
+
+#battery.warning:not(.charging) {
+  color: #f9e2af;
+}
+
+#battery.critical:not(.charging) {
+  color: #f38ba8;
+  animation: blink 1.2s ease infinite;
+}
+
+@keyframes blink {
+  to { opacity: 0.5; }
+}
+
+/* ── Tooltip ─────────────────────────────────────────────── */
+tooltip {
+  background: rgba(17, 17, 27, 0.95);
+  border: 1px solid rgba(205, 214, 244, 0.12);
+  border-radius: 10px;
+  color: #cdd6f4;
+  padding: 6px 10px;
+}
