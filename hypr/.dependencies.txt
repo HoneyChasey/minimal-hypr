@@ -8,6 +8,7 @@ pulse audio = pacman -S pulseaudio # Check https://wiki.archlinux.org/title/Puls
 brightness control = sudo pacman -S brightnessctl 
 Sound open firemware = sudo pacman -S sof-firmware # Please check before the readme before the installation of the firemware
 Zen Browser = flatpak install flathub app.zen_browser.zen
+Zen browser need also this to access download folder = sudo pacman -S xdg-desktop-portal xdg-desktop-portal-gtk xdg-desktop-portal-hyprland
 
 Font
 Do this commands to dl and install font on your system.
