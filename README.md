@@ -2,6 +2,25 @@
     <img alt="minimal-hypr logo" src="https://github.com/HoneyChasey/minimal-hypr/blob/main/.github/assets/logo.png" width="120px"/>
 </div>
 
+
+# Install 
+
+This install will perform with a install script, and stow. 
+1. Launch a full update of your system (pacman -Suy) BEFORE LAUNCHING bootstrap.sh
+2. After, Launch the 2 stow commands
+
+```sh 
+stow --target=$HOME hprland-config
+```
+
+```sh 
+stow --target=$HOME waybar-config
+```
+Reboot your host. 
+If the waybar not launching, please read the read me in waybar-config/.config/waybar/readme.md
+
+More information for hyprland into the readme hyprland-config/.config/hypr/readme.md and you will see also the .dependencies.txt who explain each package i install i used in the bootstrap.sh
+
 # minimal-hypr
 Minimal config hyprland for arch based distro
 

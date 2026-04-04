@@ -2,7 +2,8 @@
 
 copy the configuration file in ~/.config/waybar/
 
-Please run systemctl --user enable --now waybar.service
+Please run this line, ONLY if the waybar not launching at the starting of your os. 
+systemctl --user enable --now waybar.service
 
 ## How add my server to the waybar ? 
 
