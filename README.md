@@ -2,7 +2,6 @@
     <img alt="minimal-hypr logo" src="https://github.com/HoneyChasey/minimal-hypr/blob/main/.github/assets/logo.png" width="120px"/>
 </div>
 
-
 # Install 
 
 This install will perform with a install script, and stow. 
@@ -46,11 +45,12 @@ go to hypaper.conf, set the default variable asked (CHANGEME default value)
 
 ## TODO 
 
-- Create shell script for install dependencies for the system -> not started 
+- Create shell script for install dependencies for the system -> ok
 - Finish the waybar structure (some module not working idk why) -> ok
-- Start the css for the waybar  -> not started
+- Start the css for the waybar  -> ok
 - Find the way to add autoclok at x time  -> not started
 - Add on the waybar a button to go to sleep or keybind  -> ok (already on super + m)
 - Maybe using ssdm's hyprland -> not started and need to dl hyprlock
-- Adding shortcut for brightnest and volume on fn keyboard
-- Fix on the waybar, the logo for the file manager 
+- Adding shortcut for brightnest and volume on fn keyboard -> ok
+- Fix on the waybar, the logo for the file manager -> ok
+- To reflect on: need to transfer the default audio server pulseaudio, to pirewire bc the discord screen shared use pirewire (wayland screen shared audio via pirewire). 
