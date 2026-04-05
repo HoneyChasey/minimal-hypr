@@ -10,7 +10,7 @@ This install will perform with a install script, and stow.
 2. After, Launch the 2 stow commands
 
 ```sh 
-stow --target=$HOME hprland-config
+stow --target=$HOME hyprland-config
 ```
 
 ```sh 
