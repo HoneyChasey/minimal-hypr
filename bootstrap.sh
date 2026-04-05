@@ -18,7 +18,8 @@ sudo pacman -S --noconfirm \
   sof-firmware \
   xdg-desktop-portal \
   xdg-desktop-portal-gtk \
-  xdg-desktop-portal-hyprland
+  xdg-desktop-portal-hyprland \
+  hyprshot
 
 # Zen Browser (flatpak)
 echo "==> Installing Zen Browser via flatpak..."
