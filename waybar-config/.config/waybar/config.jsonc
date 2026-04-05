@@ -20,6 +20,7 @@
   
     ],
     "modules-right": [
+        "network",
         "pulseaudio",
         "cpu",
         "memory",
@@ -171,12 +172,12 @@
     },
     "network": {
         // "interface": "wlp2*", // (Optional) To force the use of this interface
-        "format-wifi": "{essid} ({signalStrength}%) 󱚻",
+        "format-wifi": "{ipaddr}/{cidr} 󱚻",
         "format-ethernet": "{ipaddr}/{cidr} 󰊗",
         "tooltip-format": "{ifname} via {gwaddr} 󰊗",
         "format-linked": "{ifname} (No IP) 󰊗",
         "format-disconnected": "Disconnected ⚠",
-        "format-alt": "{ifname}: {ipaddr}/{cidr}"
+        "format-alt": "{ifname}: {essid}"
     },
     "pulseaudio": {
         // "scroll-step": 1, // %, can be a float

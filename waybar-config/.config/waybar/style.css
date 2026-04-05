@@ -28,6 +28,7 @@ window#waybar > box {
 #mpris,
 #pulseaudio,
 #cpu,
+#network,
 #memory,
 #battery {
   background: rgba(30, 30, 46, 0.7);
