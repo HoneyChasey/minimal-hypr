@@ -14,6 +14,7 @@ sudo pacman -S --noconfirm \
   hyperpaper \ #maintained by the community, need to by checked
   ghostty \ # maintained by the ghostty teams
   alsa-utils \ 
+  unzip \
   # pulseaudio \
   brightnessctl \ # maintained by the hyprland team (need to be checked)
   sof-firmware \ 
