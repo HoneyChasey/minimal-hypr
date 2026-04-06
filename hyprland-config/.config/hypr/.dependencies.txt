@@ -1,6 +1,6 @@
 xwg-displays = sudo pacman -S nwg-displays 
 waylbar = sudo pacman -S waybar
-hyperpaper = sudo pacman -S hyperpaper
+hyprpaper = sudo pacman -S hyperpaper
 hyprlauncher = sudo pacman -S hyprlauncher
 ghostty = sudo pacman -S ghostty
 Advenced Linux Sound Architecture = pacman -S alsa-utils
