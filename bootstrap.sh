@@ -18,7 +18,7 @@ sudo pacman -S --noconfirm \
   hyprlauncher \ # maintained by the hyprland teams and open a menu to launch applciations and flatpak.
   # pulseaudio \
   brightnessctl \ # maintained by the hyprland team (need to be checked)
-  sof-firmware \  # maintained by intel and linux community, the packet will downlods the correct firemware for your modern audio controller (like your speaker and your mic).
+  sof-firmware \  # maintained by intel and linux community, the packet will downlods the correct firemware for your modern audio controller (like your speaker and your mic). If not working on your pc make research.
   xdg-desktop-portal \ # maintained by the hyprland team (need to be checked). He is like a bridge from your application sandboxed and your desktop environement. 
   xdg-desktop-portal-gtk \ # maintained by hyplrand and used for file picker (like flatpak picking file) (need to be checked). Same but this is the backend, to display messages from your sandboxed applications to your desktop environement (like notification, file picker, open link etc etc).
   xdg-desktop-portal-hyprland \ # maintained by htpland team and is used for screen sharing.
