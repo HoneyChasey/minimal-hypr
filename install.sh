@@ -33,5 +33,3 @@ sleep 0.5
 systemctl --user enable --now pipewire wireplumber xdg-desktop-portal-hyprland
 
 echo "==> Now rebooting"
-sleep 1
-sudo reboot
