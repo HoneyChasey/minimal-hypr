@@ -27,6 +27,13 @@ Variants {
         anchors.leftMargin: 10
         anchors.verticalCenter: parent.verticalCenter
       }
+
+      // Rright
+      Power {
+        anchors.right: parent.right
+        anchors.rightMargin: 10
+        anchors.verticalCenter: parent.verticalCenter
+      }
     
       // Centre
       Clock { // Import the code inside the Clock.qml 
