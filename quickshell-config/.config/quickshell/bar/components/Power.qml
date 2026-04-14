@@ -8,7 +8,7 @@ import Quickshell
 } */
 
 Text {
-  text: "󰣇"
-  font.pixelSize: 28
-  color: "#08abbd"
+  text: "⏻"
+  font.pixelSize: 25
+  color: "#c92a18"
 }
