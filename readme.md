@@ -15,6 +15,11 @@ stow --target=$HOME hyprland-config
 ```sh 
 stow --target=$HOME waybar-config
 ```
+
+```sh 
+stow --target=$HOME neo-config
+```
+
 Reboot your host. 
 If the waybar not launching, please read the read me in waybar-config/.config/waybar/readme.md
 
