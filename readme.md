@@ -17,7 +17,7 @@ stow --target=$HOME waybar-config
 ```
 
 ```sh 
-stow --target=$HOME neo-config
+stow --target=$HOME neovim
 ```
 
 Reboot your host. 
