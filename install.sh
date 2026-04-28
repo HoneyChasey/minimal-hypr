@@ -6,7 +6,7 @@ echo "==> Installing dependencies..."
 
 # Core packages
 # TODO, (need to be checked) == check who is the maintainer of the project.
-sudo pacman -S --noconfirm nwg-displays stow waybar flatpak hyprpaper ghostty alsa-utils unzip hyprlauncher brightnessctl sof-firmware xdg-desktop-portal xdg-desktop-portal-gtk xdg-desktop-portal-hyprland hyprshot pipewire wireplumber
+sudo pacman -S --noconfirm nwg-displays stow waybar flatpak hyprpaper ghostty alsa-utils unzip hyprlauncher brightnessctl sof-firmware xdg-desktop-portal xdg-desktop-portal-gtk xdg-desktop-portal-hyprland hyprshot pipewire wireplumber playerctl
 
 echo "==> setup with stow your files in the system"
 sudo rm -rf ~/.config/hypr 
