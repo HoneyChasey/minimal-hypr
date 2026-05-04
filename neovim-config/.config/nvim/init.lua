@@ -32,7 +32,7 @@ vim.lsp.enable('gopls')
 vim.lsp.enable('clangd')
 vim.lsp.enable('docker_compose_language_service')
 vim.lsp.enable("rust_analyzer")
-vim.lsp.enable('twiggy-language-server')
+-- vim.lsp.enable('twiggy-language-server')
 vim.lsp.enable('jdtls')
 vim.lsp.enable('qmlls')
 
