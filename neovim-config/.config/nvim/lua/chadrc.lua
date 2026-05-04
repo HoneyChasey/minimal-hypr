@@ -16,7 +16,7 @@ M.base46 = {
 
  M.ui = {
    statusline = {
-     theme = "minimal",
+     theme = "minimal", -- to see default theme and separator_style, please enter the command :h nvui
      separator_style = "round",
     default = { "mode", "file", "git", "%=", "lsp_msg", "%=", "diagnostics", "lsp", "cwd", "cursor" },
     modules = {
