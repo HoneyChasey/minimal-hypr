@@ -55,7 +55,7 @@
       "format-windows-seperator": " ",
       "window-rewrite-default": "",
       "window-rewrite":{
-        "class<.*zen.*>": "",
+        "class<.*zen.*>": "",
         "class<firefox>": "", // if y wanna choose firefox as default browser
         "class<com.mitchellh.ghostty>": "", // or  idk now
         "title<.*nvim.*>": "",
