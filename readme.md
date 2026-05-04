@@ -9,15 +9,15 @@ This install will perform with a install script, and stow.
 2. After, Launch the 2 stow commands
 
 ```sh 
-stow --target=$HOME hyprland-config
+stow --target=$HOME --ignore='.github' hyprland-config
 ```
 
 ```sh 
-stow --target=$HOME waybar-config
+stow --target=$HOME --ignore='.github' waybar-config
 ```
 
 ```sh 
-stow --target=$HOME neovim
+stow --target=$HOME --ignore='.github' neovim-config
 ```
 
 Reboot your host. 
