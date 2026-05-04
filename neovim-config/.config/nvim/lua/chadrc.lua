@@ -16,7 +16,7 @@ M.base46 = {
 
  M.ui = {
    statusline = {
-     theme = "default",
+     theme = "minimal",
      separator_style = "round",
     default = { "mode", "file", "git", "%=", "lsp_msg", "%=", "diagnostics", "lsp", "cwd", "cursor" },
     modules = {
