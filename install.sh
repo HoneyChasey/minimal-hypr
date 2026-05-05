@@ -11,7 +11,7 @@ sudo pacman -S --noconfirm nwg-displays stow waybar flatpak hyprpaper ghostty al
 sudo pacman -S --noconfirm sddm qt6-declarative qt6-5compat qt6-svg qt6-multimedia qt6-multimedia-ffmpeg gst-plugins-base gst-plugins-good gst-plugins-bad gst-plugins-ugly 
 
 # Adding some cool packages 
-sudo pacman -S --noconfirm bluetui
+sudo pacman -S --noconfirm bluetui gdu
 
 
 #echo "==> Changing network-manager as default manager for the wifi"
