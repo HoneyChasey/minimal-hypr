@@ -11,13 +11,13 @@ sudo pacman -S --noconfirm nwg-displays stow waybar flatpak hyprpaper ghostty al
 sudo pacman -S --noconfirm sddm qt6-declarative qt6-5compat qt6-svg qt6-multimedia qt6-multimedia-ffmpeg gst-plugins-base gst-plugins-good gst-plugins-bad gst-plugins-ugly 
 
 # Adding some cool packages 
-sudo pacman -S --noconfirm bluetui networkmanager
+sudo pacman -S --noconfirm bluetui
 
 
-echo "==> Changing network-manager as default manager for the wifi"
-sudo systemctl stop iwd
-sudo systemctl disable iwd
-sudo systemctl enable --now NetworkManager
+#echo "==> Changing network-manager as default manager for the wifi"
+#sudo systemctl stop iwd
+#sudo systemctl disable iwd
+#sudo systemctl enable --now NetworkManager
 
 echo "==> setup with stow your files in the system"
 sudo rm -rf ~/.config/hypr 
