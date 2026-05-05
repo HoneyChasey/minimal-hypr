@@ -79,3 +79,4 @@ go to hypaper.conf, set the default variable asked (CHANGEME default value)
   hyprshot \ # maintained by the community, used for take screenshot on hyprland. 
   pipewire \ # Server audio maintained by the community. USE FOR THE WAYLAND AUDIO SCREEN SHARE
   wireplumber \  # maintained by freedesktop.org. Sheldulded all the audio application to isolate each application audio. USE FOR THE WAYLAND AUDIO SREEN SHARE 
+  bluetui \ # maintained by the community, tui for manage bluetooth and connect devices (and pair devices).
