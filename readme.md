@@ -33,7 +33,6 @@ Minimal config hyprland for arch based distro. Is used the audio server *pipewri
 go to hypaper.conf, set the default variable asked (CHANGEME default value)
 
 ## Cool Packages 
-- network-manager: launch with the command `nmtui`. Manage wifi
 - bluetui: launch with hte command `bluetui`. Manage bluetooth
 
 ## TODO 
