@@ -34,6 +34,7 @@ go to hypaper.conf, set the default variable asked (CHANGEME default value)
 
 ## Cool Packages 
 - bluetui: launch with hte command `bluetui`. Manage bluetooth
+- gdu: manage storage on the machine in TUI. Based on the project ncdu, is the same but speeder and write in go. Run `gdu` in your terminal.
 
 ## TODO 
 
