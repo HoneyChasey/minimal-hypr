@@ -28,25 +28,13 @@ More information for hyprland into the readme hyprland-config/.config/hypr/readm
 # minimal-hypr
 Minimal config hyprland for arch based distro. Is used the audio server *pipewrire* beacause, xdg-desktop-portal-hyprland, and xdg-desktop-portal, use pirewire as default audio server, for stream audio display. If you want use *pulseaudio*, please install the package and go to *hyprland-config/.config/hypr/hyprland/keybinds* and read the comments inside the file for the audio server.
 
-Copy hypr folder into: 
-```sh 
-~/.config/hypr
-```
-and waybar folder into 
-
-```sh 
-~/.config/waybar
-```
-and default wallpaper to 
-
-```sh 
-~/Documents/wallppers/
-```
-but change it if you don't like the default path
-
 ## For hypaper 
 
 go to hypaper.conf, set the default variable asked (CHANGEME default value)
+
+## Cool Packages 
+- network-manager: launch with the command `nmtui`. Manage wifi
+- bluetui: launch with hte command `bluetui`. Manage bluetooth
 
 ## TODO 
 

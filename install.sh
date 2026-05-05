@@ -8,13 +8,23 @@ echo "==> Installing dependencies..."
 sudo pacman -S --noconfirm nwg-displays stow waybar flatpak hyprpaper ghostty alsa-utils unzip hyprlauncher brightnessctl sof-firmware xdg-desktop-portal xdg-desktop-portal-gtk xdg-desktop-portal-hyprland hyprshot pipewire wireplumber hyprlock
 
 # Adding quickshell-lockscreen dependencies
-sudo pacman -S --noconfirm sddm qt6-declarative qt6-5compat qt6-svg qt6-multimedia qt6-multimedia-ffmpeg gst-plugins-base gst-plugins-good gst-plugins-bad gst-plugins-ugly bluetui
+sudo pacman -S --noconfirm sddm qt6-declarative qt6-5compat qt6-svg qt6-multimedia qt6-multimedia-ffmpeg gst-plugins-base gst-plugins-good gst-plugins-bad gst-plugins-ugly 
+
+# Adding some cool packages 
+sudo pacman -S --noconfirm bluetui networkmanager
+
+
+echo "==> Changing network-manager as default manager for the wifi"
+sudo systemctl stop iwd
+sudo systemctl disable iwd
+sudo systemctl enable --now NetworkManager
 
 echo "==> setup with stow your files in the system"
 sudo rm -rf ~/.config/hypr 
 sudo rm -rf ~/.config/waybar
 stow --target=$HOME hyprland-config
 stow --target=$HOME waybar-config
+stow --target=$HOME neovim-config
 
 # Zen Browser (flatpak)
 echo "==> Installing Zen Browser via flatpak..."
