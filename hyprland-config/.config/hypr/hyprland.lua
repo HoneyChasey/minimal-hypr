@@ -18,7 +18,7 @@ require("hyprland/keywords") -- contains all program i use and call in other con
 require("hyprland/keybinds") -- keybinding conf.
 require("hyprland/autostart") -- autostart nessessary process
 -- require("hyperland/monitors") -- contains all env vairable
--- require("hyperland/apparence") -- configuration file for visual appearance and styling (gaps, borders, animations, and decorations).
+require("hyprland/apparence") -- configuration file for visual appearance and styling (gaps, borders, animations, and decorations).
 require("hyprland/input") -- configuration file for input conf adn gesture
 -- require("hyprland/permissions") -- configuration file for permissions
 

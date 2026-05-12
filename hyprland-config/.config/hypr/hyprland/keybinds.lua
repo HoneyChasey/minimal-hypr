@@ -42,6 +42,12 @@ hl.bind(mainMod .. " + up",          hl.dsp.focus({ direction = "u" }))
 hl.bind(mainMod .. " + down",        hl.dsp.focus({ direction = "d" }))
 
 -- Workspaces (clavier FR)
+-- Also you can use this loop is you use USA keyboard: 
+--for i = 1, 10 do
+    --local key = i % 10 -- 10 maps to key 0
+    --hl.bind(mainMod .. " + " .. key,             hl.dsp.focus({ workspace = i}))
+    --hl.bind(mainMod .. " + SHIFT + " .. key,     hl.dsp.window.move({ workspace = i }))
+--end
 hl.bind(mainMod .. " + ampersand",   function() hl.dispatch(hl.dsp.focus({workspace = 1 })) end)
 hl.bind(mainMod .. " + eacute",      function() hl.dispatch(hl.dsp.focus({workspace = 2 })) end)
 
@@ -55,6 +61,17 @@ hl.bind(mainMod .. " + ccedilla",    function() hl.dispatch(hl.dsp.focus({worksp
 hl.bind(mainMod .. " + agrave",      function() hl.dispatch(hl.dsp.focus({workspace = 10 })) end)
 
 -- Déplacer fenêtre vers workspace (clavier FR)
+-- Thx to reddit https://www.reddit.com/r/hyprland/comments/1tag1q1/movetoworkspacesilent_conf_to_lua/
+hl.bind(mainMod .. " + SHIFT + ampersand",  hl.dsp.window.move({ workspace = 1,  follow = false }))
+hl.bind(mainMod .. " + SHIFT + eacute",     hl.dsp.window.move({ workspace = 2,  follow = false }))
+hl.bind(mainMod .. " + SHIFT + quotedbl",   hl.dsp.window.move({ workspace = 3,  follow = false }))
+hl.bind(mainMod .. " + SHIFT + apostrophe", hl.dsp.window.move({ workspace = 4,  follow = false }))
+hl.bind(mainMod .. " + SHIFT + parenleft",  hl.dsp.window.move({ workspace = 5,  follow = false }))
+hl.bind(mainMod .. " + SHIFT + minus",      hl.dsp.window.move({ workspace = 6,  follow = false }))
+hl.bind(mainMod .. " + SHIFT + egrave",     hl.dsp.window.move({ workspace = 7,  follow = false }))
+hl.bind(mainMod .. " + SHIFT + underscore", hl.dsp.window.move({ workspace = 8,  follow = false }))
+hl.bind(mainMod .. " + SHIFT + ccedilla",   hl.dsp.window.move({ workspace = 9,  follow = false }))
+hl.bind(mainMod .. " + SHIFT + agrave",     hl.dsp.window.move({ workspace = 10, follow = false }))
 
 -- Scratchpad
 
