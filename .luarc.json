@@ -1,0 +1,14 @@
+{
+  "workspace": {
+    "ignoreDir": [
+      "wallpapers",
+      "waybar-config",
+      "quickshell-config",
+      "neovim-config"
+    ],
+    "checkThirdParty": false
+  },
+  "diagnostics": {
+    "globals": ["hl", "vim"]
+  }
+}

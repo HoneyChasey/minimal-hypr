@@ -8,20 +8,23 @@ vim.lsp.enable(servers)
 --  rust analyser 
 -- config lsp for hyprland (so lua lsp)
 vim.lsp.config('lua_ls', {
-  settings = {
-    Lua = {
-      diagnostics = {
-        globals = {"vim", "hl"}, 
-        },
-        workspace = {
-          library = {
-              vim.fn.expand "$VIMRUNTIME/lua",
-              vim.fn.stdpath "data" .. "/lazy/ui/nvchad_types",
-              "/usr/share/hypr/stubs/",
+    settings = {
+        Lua = {
+            diagnostics = {
+                globals = { "vim", "hl" },
             },
-            maxPreload = 100000,
-            prelaodFileSize = 100000,
-          },
-      },
+            hint = {
+                enable = true,
+                semicolon = "Disable",
+            },
+            runtime = {
+                version = "LuaJIT",
+            },
+            workspace = {
+                checkThirdParty = false,
+                maxPreload    = 1000,
+                preloadFileSize = 150,
+            },
+        },
     },
-  })
+})
