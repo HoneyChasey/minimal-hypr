@@ -8,6 +8,13 @@ Waybar also provides a systemd service. If you use Hyprland with uwsm, you can e
 
 systemctl --user enable --now waybar.service
 
+## Adding the Hyprland's stub
+
+In version 0.55, config file are in lua. 
+But i use a lsp for lua, so i need to add the Hyprland's stub. You can find the configuration file of lsp at the root of .config/hypr/.luarc.json
+
+> Btw: stub is a file that describes what functions and types exist, without actually doing anything.
+
 ## Audio drivers 
 
 If you have an hp pc model, or anything else, you may need download some firwmware to download. 
