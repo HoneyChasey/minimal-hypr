@@ -21,6 +21,7 @@ require("hyprland/autostart") -- autostart nessessary process
 require("hyprland/apparence") -- configuration file for visual appearance and styling (gaps, borders, animations, and decorations).
 require("hyprland/input") -- configuration file for input conf adn gesture
 -- require("hyprland/permissions") -- configuration file for permissions
+require("hyprland/rules") -- windows rules
 
 -- Plugins 
 -- source = waybar/waybar.conf # waybar conf 
