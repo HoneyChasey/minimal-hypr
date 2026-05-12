@@ -35,7 +35,7 @@ vim.lsp.enable("rust_analyzer")
 -- vim.lsp.enable('twiggy-language-server')
 vim.lsp.enable('jdtls')
 vim.lsp.enable('qmlls')
-
+vim.lsp.enable('lua_ls')
 -- load theme
 dofile(vim.g.base46_cache .. "defaults")
 dofile(vim.g.base46_cache .. "statusline")
