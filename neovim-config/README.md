@@ -16,6 +16,43 @@ stow --target=$HOME neo-config
 
 #TODO for the next time, check if all lsp installing automactly
 
+
+## Development Setup And files for autoconfiguration of LSP 
+
+In this section we will see how to create a file at the root of your project. Thx to this file, your lsp configured correctly for specific dev environment.
+
+### Python LSP with PyRight 
+
+Before, if you used .venv folder, you need to activate the .venv and after enter in nvim. This is bad. 
+Now you have just to create a file named: **pyrightconfig.json**. 
+
+Write: 
+
+```json 
+{
+  "venvPath": ".",
+  "venv": ".venv"
+}
+```
+And now you have just need to open nvim and go to your project, lsp will auto configure himself.
+
+### Lua With Lua_ls (lua-language-server)
+You can add or auto configure lsp for each project. Like python, write your root project folder. The configuration file's name is: **.luarc.json**
+
+Exemple: 
+```json 
+{
+  "workspace": {
+    "library": [
+      "/usr/share/hypr/stubs"
+    ]
+  },
+  "diagnostics": {
+    "globals": ["hl"]
+  }
+}
+```
+
 ## Plugins 
 
 ## Parser 
