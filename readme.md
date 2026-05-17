@@ -25,6 +25,8 @@ If the waybar not launching, please read the read me in waybar-config/.config/wa
 
 More information for hyprland into the readme hyprland-config/.config/hypr/readme.md and you will see also the .dependencies.txt who explain each package i install i used in the bootstrap.sh
 
+If your wifi not working or is not displayed on the waybar, make sure to have networkmanager dl, and installed on the computer (and enable). Make sure to have iwd uninstalled and stop.
+
 # minimal-hypr
 Minimal config hyprland for arch based distro. Is used the audio server *pipewrire* beacause, xdg-desktop-portal-hyprland, and xdg-desktop-portal, use pirewire as default audio server, for stream audio display. If you want use *pulseaudio*, please install the package and go to *hyprland-config/.config/hypr/hyprland/keybinds* and read the comments inside the file for the audio server.
 
@@ -35,6 +37,7 @@ go to hypaper.conf, set the default variable asked (CHANGEME default value)
 ## Cool Packages 
 - bluetui: launch with hte command `bluetui`. Manage bluetooth
 - gdu: manage storage on the machine in TUI. Based on the project ncdu, is the same but speeder and write in go. Run `gdu` in your terminal.
+- nmcli and nmtui: Manager newtork with command line and tui. We don't use iwd because third party app (like proton vpn need it).
 
 ## TODO 
 
