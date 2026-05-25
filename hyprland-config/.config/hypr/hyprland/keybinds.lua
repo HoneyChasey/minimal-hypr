@@ -4,20 +4,21 @@ local mainMod = "SUPER"
 
 -- Apps
 hl.bind(mainMod .. " + A",           hl.dsp.exec_cmd(Terminal))
-hl.bind(mainMod .. " + C",           hl.dsp.window.close())
-hl.bind(mainMod .. " + M",           hl.dsp.exec_cmd("command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch exit"))
-hl.bind(mainMod .. " + L",           hl.dsp.exec_cmd("hyprlock"))
 hl.bind(mainMod .. " + E",           hl.dsp.exec_cmd(FileManager))
-hl.bind(mainMod .. " + V",           hl.dsp.window.float({ action = "toggle" }))
 hl.bind(mainMod .. " + R",           hl.dsp.exec_cmd(Menu))
-hl.bind(mainMod .. " + J",           hl.dsp.layout("togglesplit"))
-hl.bind(mainMod .. " + B",           hl.dsp.exec_cmd(Browser))
-hl.bind(mainMod .. " + W",           hl.dsp.exec_cmd(WallapperApp))
+hl.bind(mainMod .. " + B",           hl.dsp.exec_cmd(Browser .. " --new-window"))
+hl.bind(mainMod .. " + SHIFT + B",   hl.dsp.exec_cmd(Browser .. " --private-window"))
 
--- Screenshots
-hl.bind(mainMod .. " + P",           hl.dsp.exec_cmd("hyprshot -m window"))
-hl.bind(mainMod .. " + SHIFT + P",     hl.dsp.exec_cmd("hyprshot -m region"))
-hl.bind(mainMod .. " + SHIFT + O",     hl.dsp.exec_cmd("hyprshot -m output"))
+-- Session
+hl.bind(mainMod .. " + M",           hl.dsp.exec_cmd("command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch exit"))
+hl.bind(mainMod .. " + L",           hl.dsp.exec_cmd("~/.local/share/quickshell-lockscreen/lock.sh"))
+
+-- Window
+hl.bind(mainMod .. " + J",           hl.dsp.layout("togglesplit")) -- Dwindle
+hl.bind(mainMod .. " + V",           hl.dsp.window.float({ action = "toggle" }))
+hl.bind(mainMod .. " + F",           hl.dsp.window.fullscreen({ action = "toggle" }))
+hl.bind(mainMod .. " + C",           hl.dsp.window.close())
+
 
 -- Audio (PipeWire)
 hl.bind("XF86AudioRaiseVolume",   hl.dsp.exec_cmd("wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+")) -- previous was a bindel
