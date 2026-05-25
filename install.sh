@@ -5,7 +5,7 @@ set -e
 echo "==> Installing dependencies..."
 
 # Core packages
-sudo pacman -S --noconfirm nwg-displays stow waybar flatpak hyprpaper ghostty alsa-utils unzip hyprlauncher brightnessctl sof-firmware xdg-desktop-portal xdg-desktop-portal-gtk xdg-desktop-portal-hyprland hyprshot pipewire wireplumber hyprlock networkmanager wpa_supplicant
+sudo pacman -S --noconfirm nwg-displays stow waybar flatpak hyprpaper ghostty alsa-utils unzip hyprlauncher brightnessctl sof-firmware xdg-desktop-portal xdg-desktop-portal-gtk xdg-desktop-portal-hyprland hyprshot pipewire wireplumber hyprlock networkmanager wpa_supplicant noto-fonts noto-fonts-cfk noto-fonts-emoji
 
 # Adding quickshell-lockscreen dependencies
 sudo pacman -S --noconfirm sddm qt6-declarative qt6-5compat qt6-svg qt6-multimedia qt6-multimedia-ffmpeg gst-plugins-base gst-plugins-good gst-plugins-bad gst-plugins-ugly 
