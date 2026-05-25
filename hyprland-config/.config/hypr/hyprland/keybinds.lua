@@ -3,16 +3,16 @@
 local mainMod = "SUPER"
 
 -- Apps
-hl.bind(mainMod .. " + A",           hl.dsp.exec_cmd(terminal))
+hl.bind(mainMod .. " + A",           hl.dsp.exec_cmd(Terminal))
 hl.bind(mainMod .. " + C",           hl.dsp.window.close())
 hl.bind(mainMod .. " + M",           hl.dsp.exec_cmd("command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch exit"))
 hl.bind(mainMod .. " + L",           hl.dsp.exec_cmd("hyprlock"))
-hl.bind(mainMod .. " + E",           hl.dsp.exec_cmd(fileManager))
+hl.bind(mainMod .. " + E",           hl.dsp.exec_cmd(FileManager))
 hl.bind(mainMod .. " + V",           hl.dsp.window.float({ action = "toggle" }))
-hl.bind(mainMod .. " + R",           hl.dsp.exec_cmd(menu))
+hl.bind(mainMod .. " + R",           hl.dsp.exec_cmd(Menu))
 hl.bind(mainMod .. " + J",           hl.dsp.layout("togglesplit"))
-hl.bind(mainMod .. " + B",           hl.dsp.exec_cmd(browser))
-hl.bind(mainMod .. " + W",           hl.dsp.exec_cmd(wallapperApp))
+hl.bind(mainMod .. " + B",           hl.dsp.exec_cmd(Browser))
+hl.bind(mainMod .. " + W",           hl.dsp.exec_cmd(WallapperApp))
 
 -- Screenshots
 hl.bind(mainMod .. " + P",           hl.dsp.exec_cmd("hyprshot -m window"))
@@ -28,7 +28,7 @@ hl.bind("XF86AudioMicMute",          hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AU
 -- Brightness
 hl.bind("XF86MonBrightnessUp",    hl.dsp.exec_cmd("brightnessctl -e4 -n2 set 5%+")) -- previous was a bindel
 hl.bind("XF86MonBrightnessDown",  hl.dsp.exec_cmd("brightnessctl -e4 -n2 set 5%-")) -- previous was a bindel
- 
+
 -- Playerctl
 hl.bind("XF86AudioNext",           hl.dsp.exec_cmd("playerctl next"))  -- previous was a bind_l
 hl.bind("XF86AudioPause",          hl.dsp.exec_cmd("playerctl play-pause")) -- previous was a bind_l
