@@ -75,3 +75,5 @@ hl.bind("switch:off:Lid Switch", hl.dsp.exec_cmd("hyprctl dispatch dpms on"), {l
 -- Scroll workspaces
 
 -- Move/resize avec souris
+hl.bind(mainMod .. " + mouse:272", hl.dsp.window.drag(), { mouse = true })
+hl.bind(mainMod .. " + mouse:272", hl.dsp.window.resize(), { mouse = true })
