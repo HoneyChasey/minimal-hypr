@@ -19,6 +19,10 @@ hl.bind(mainMod .. " + V",           hl.dsp.window.float({ action = "toggle" }))
 hl.bind(mainMod .. " + F",           hl.dsp.window.fullscreen({ action = "toggle" }))
 hl.bind(mainMod .. " + C",           hl.dsp.window.close())
 
+-- Screenshots
+hl.bind(mainMod .. " + P",           hl.dsp.exec_cmd("hyprshot -m window"))
+hl.bind(mainMod .. " + SHIFT + P",     hl.dsp.exec_cmd("hyprshot -m region"))
+hl.bind(mainMod .. " + SHIFT + O",     hl.dsp.exec_cmd("hyprshot -m output"))
 
 -- Audio (PipeWire)
 hl.bind("XF86AudioRaiseVolume",   hl.dsp.exec_cmd("wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+")) -- previous was a bindel
