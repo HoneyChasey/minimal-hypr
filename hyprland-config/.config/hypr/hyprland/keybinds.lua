@@ -11,7 +11,7 @@ hl.bind(mainMod .. " + SHIFT + B",   hl.dsp.exec_cmd(Browser .. " --private-wind
 
 -- Session
 hl.bind(mainMod .. " + M",           hl.dsp.exec_cmd("command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch exit"))
-hl.bind(mainMod .. " + L",           hl.dsp.exec_cmd("~/.local/share/quickshell-lockscreen/lock.sh"))
+hl.bind(mainMod .. " + L",           hl.dsp.exec_cmd("hyprlock"))
 
 -- Window
 hl.bind(mainMod .. " + J",           hl.dsp.layout("togglesplit")) -- Dwindle
