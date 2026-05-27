@@ -13,6 +13,10 @@ sudo pacman -S --noconfirm sddm qt6-declarative qt6-5compat qt6-svg qt6-multimed
 # Adding some cool packages 
 sudo pacman -S --noconfirm bluetui gdu
 
+
+echo "Installing lazydocker"
+curl https://raw.githubusercontent.com/jesseduffield/lazydocker/master/scripts/install_update_linux.sh | bash
+
 echo "==> Changing network-manager as default manager for the wifi"
 sudo systemctl stop iwd
 sudo systemctl disable iwd
