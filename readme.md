@@ -1,11 +1,11 @@
 <div align="center">
-    <img alt="minimal-hypr logo" src="https://github.com/HoneyChasey/minimal-hypr/blob/main/.github/assets/logo.png" width="120px"/>
+    <img alt="minimal-hypr logo" src=".github/assets/logo.png">
 </div>
 
-# Install 
+# Install
 
 This install will perform with a install script, and stow. 
-1. Launch a full update of your system (pacman -Suy) BEFORE LAUNCHING bootstrap.sh
+0. Launch a full update of your system (pacman -Suy) BEFORE LAUNCHING bootstrap.sh
 2. After, Launch the 2 stow commands
 
 ```sh 
