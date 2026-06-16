@@ -10,7 +10,7 @@ sudo pacman -S --needed --noconfirm nwg-displays stow waybar flatpak hyprpaper \
     ghostty alsa-utils unzip hyprlauncher brightnessctl sof-firmware \
     xdg-desktop-portal xdg-desktop-portal-gtk xdg-desktop-portal-hyprland \
     hyprshot pipewire wireplumber hyprlock networkmanager wpa_supplicant \
-    noto-fonts noto-fonts-cjk noto-fonts-emoji
+    noto-fonts noto-fonts-cjk noto-fonts-emoji wget
 
 # Adding quickshell-lockscreen dependencies
 #sudo pacman -S --needed --noconfirm sddm qt6-declarative qt6-5compat qt6-svg \
@@ -44,7 +44,7 @@ flatpak install -y flathub app.zen_browser.zen
 
 # CascadiaCode Nerd Font
 echo "==> Installing CascadiaCode Nerd Font..."
-wget -q https://github.com/ryoasis/nerd-fonts/releases/download/v3.4.0/CascadiaCode.zip
+wget -q https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/CascadiaCode.zip
 mkdir -p ~/.local/share/fonts/CascadiaCode
 unzip -o CascadiaCode.zip -d ~/.local/share/fonts/CascadiaCode
 rm CascadiaCode.zip
