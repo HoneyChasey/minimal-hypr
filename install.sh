@@ -1,68 +1,125 @@
 #!/bin/bash
 
-echo "==> Starting installation script..."
+GREEN='\033[0;32m'
+BLUE='\033[0;34m'
+YELLOW='\033[1;33m'
+RED='\033[0;31m'
+NC='\033[0m'
 
-echo "==> Full system upgrade..."
-sudo pacman -Suy
 
-echo "==> Installing dependencies..."
-sudo pacman -S --needed --noconfirm nwg-displays stow waybar flatpak hyprpaper \
-    ghostty alsa-utils unzip hyprlauncher brightnessctl sof-firmware \
-    xdg-desktop-portal xdg-desktop-portal-gtk xdg-desktop-portal-hyprland \
-    hyprshot pipewire wireplumber hyprlock networkmanager wpa_supplicant \
-    noto-fonts noto-fonts-cjk noto-fonts-emoji wget
+echo -e "${BLUE}=> Starting installation script...${NC}"
+
+errorHandling(){
+  local returnCode=$1
+  case $returnCode in
+    1) echo -e "${RED}[ERROR] Network Is Unreachable${NC}" ;;
+    2) echo -e "${RED}[ERROR] Unkown Error${NC}" ;;
+    3) echo -e "${RED}[ERROR] Cannot enable services${NC}" ;;
+    4) echo -e "${RED}[ERROR] Package installation failed${NC}" ;;
+  esac
+  exit $returnCode
+}
+
+systemUpgrade(){
+  echo -e "${BLUE}==> Full system upgrade...${NC}"
+  sudo pacman -Suy
+  if [ $? -ne 0 ]; then
+    errorHandling 2
+  fi
+}
+
+installDependencies() {
+  echo -e "${BLUE}==> Installing dependencies...${NC}"
+  sudo pacman -S --needed --noconfirm nwg-displays stow waybar flatpak hyprpaper \
+      ghostty alsa-utils unzip hyprlauncher brightnessctl sof-firmware \
+      xdg-desktop-portal xdg-desktop-portal-gtk xdg-desktop-portal-hyprland \
+      hyprshot pipewire wireplumber hyprlock networkmanager wpa_supplicant \
+      noto-fonts noto-fonts-cjk noto-fonts-emoji wget
+  if [ $? -ne 0 ]; then
+    errorHandling 1
+  fi
+}
 
 # Adding quickshell-lockscreen dependencies
 #sudo pacman -S --needed --noconfirm sddm qt6-declarative qt6-5compat qt6-svg \
     #qt6-multimedia qt6-multimedia-ffmpeg gst-plugins-base gst-plugins-good \
-    #gst-plugins-bad gst-plugins-ugly 
+    #gst-plugins-bad gst-plugins-ugly
 
-# Adding some cool packages 
-sudo pacman -S --needed --noconfirm bluetui gdu
+noNecessaryPackages(){
+  echo -e "${BLUE}==> Installation of no necessary packages...${NC}"
+  sudo pacman -S --needed --noconfirm bluetui gdu
+  if [ $? -ne 0 ]; then
+    errorHandling 4
+  fi
+}
 
-# Adding Zsh and Powerlevel10k
-echo "==> Installing Zsh and Powerlevel10k..."
-sudo pacman -S --needed --noconfirm zsh
-# Change default shell to zsh for the current user
-chsh -s $(which zsh)
+installZsh(){
+  echo -e "${BLUE}==> Installing Zsh and Powerlevel10k...${NC}"
+  sudo pacman -S --needed --noconfirm zsh
+  chsh -s $(which zsh)
+}
 
-echo "==> Installing lazydocker..."
-#curl https://raw.githubusercontent.com/jesseduffield/lazydocker/master/scripts/install_update_linux.sh | bash
-# pacman 
-sudo pacman -S --needed --noconfirm lazydocker
+installLazydocker(){
+  echo -e "${BLUE}==> Installing lazydocker...${NC}"
+  sudo pacman -S --needed --noconfirm lazydocker
+}
 
-echo "==> Setting up stow for system dotfiles..."
-rm -rf ~/.config/hypr/hyprland.conf
-rm -rf ~/.config/waybar
+setupStow(){
+  echo -e "${BLUE}==> Setting up stow for system dotfiles...${NC}"
+  rm -rf ~/.config/hypr/hyprland.conf
+  rm -rf ~/.config/waybar
+  stow --target=$HOME hyprland-config || echo -e "${YELLOW}[WARN] Stow: hyprland-config failed, moving on.${NC}"
+  stow --target=$HOME waybar-config || echo -e "${YELLOW}[WARN] Stow: waybar-config failed, moving on.${NC}"
+}
 
-stow --target=$HOME hyprland-config || echo "Stow: hyprland-config failed, moving on."
-stow --target=$HOME waybar-config || echo "Stow: waybar-config failed, moving on."
+installZenBrowser(){
+  echo -e "${BLUE}==> Installing Zen Browser via flatpak...${NC}"
+  flatpak install -y flathub app.zen_browser.zen
+}
 
-# Zen Browser (flatpak)
-echo "==> Installing Zen Browser via flatpak..."
-flatpak install -y flathub app.zen_browser.zen
+installFonts(){
+  echo -e "${BLUE}==> Installing CascadiaCode Nerd Font...${NC}"
+  wget -q https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/CascadiaCode.zip
+  mkdir -p ~/.local/share/fonts/CascadiaCode
+  unzip -o CascadiaCode.zip -d ~/.local/share/fonts/CascadiaCode
+  rm CascadiaCode.zip
+  fc-cache -fv
+}
 
-# CascadiaCode Nerd Font
-echo "==> Installing CascadiaCode Nerd Font..."
-wget -q https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/CascadiaCode.zip
-mkdir -p ~/.local/share/fonts/CascadiaCode
-unzip -o CascadiaCode.zip -d ~/.local/share/fonts/CascadiaCode
-rm CascadiaCode.zip
-fc-cache -fv
+enableServices(){
+  echo -e "${BLUE}==> Enabling services needed for screen sharing and audio...${NC}"
+  systemctl --user enable --now pipewire wireplumber xdg-desktop-portal-hyprland
+  if [ $? -ne 0 ]; then
+    errorHandling 3
+  fi
+}
 
-echo "==> Enabling services needed for screen sharing and audio..."
-systemctl --user enable --now pipewire wireplumber xdg-desktop-portal-hyprland
+setupNetworkManager(){
+  echo -e "${BLUE}==> Switching network management from iwd to NetworkManager...${NC}"
+  # This is done at the very end so internet doesn't drop during downloads
+  sudo systemctl stop iwd
+  sudo systemctl disable iwd
+  echo -e "${BLUE}==> Uninstalling iwd...${NC}"
+  sudo pacman -R --noconfirm iwd || echo "iwd already removed."
+  sudo systemctl enable --now NetworkManager
+  sudo systemctl restart NetworkManager
+}
 
-echo "==> Switching network management from iwd to NetworkManager..."
-# This is done at the very end so internet doesn't drop during downloads
-sudo systemctl stop iwd
-sudo systemctl disable iwd
-echo "==> Uninstalling iwd..."
-sudo pacman -R --noconfirm iwd || echo "iwd already removed."
-sudo systemctl enable --now NetworkManager
-sudo systemctl restart NetworkManager
+main(){
+  systemUpgrade
+  installDependencies
+  noNecessaryPackages
+  installZsh
+  installLazydocker
+  setupStow
+  installZenBrowser
+  installFonts
+  enableServices
+  setupNetworkManager
+  echo -e "${GREEN}==> Done! System will reboot in 5 seconds.${NC}"
+  echo -e "${YELLOW}Note: When you open your terminal after rebooting, Powerlevel10k will prompt you to configure it.${NC}"
+  sleep 5
+  sudo reboot
+}
 
-echo "==> Done! System will reboot in 5 seconds."
-echo "Note: When you open your terminal after rebooting, Powerlevel10k will prompt you to configure it."
-sleep 5
-sudo reboot
+main
