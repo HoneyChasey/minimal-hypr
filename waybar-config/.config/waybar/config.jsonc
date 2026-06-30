@@ -60,7 +60,8 @@
         "class<com.mitchellh.ghostty>": "", // or  idk now
         "title<.*nvim.*>": "",
         "class<discord>": "", 
-        "class<vscodium>": "" //to be tested  //#TODO
+        "class<vscodium>": "", //to be tested  //#TODO
+        "class<steam>": ""
       }
     },
 
