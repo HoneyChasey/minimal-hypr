@@ -47,7 +47,7 @@ installDependencies() {
 
 noNecessaryPackages(){
   echo -e "${BLUE}==> Installation of no necessary packages...${NC}"
-  sudo pacman -S --needed --noconfirm bluetui gdu
+  sudo pacman -S --needed --noconfirm bluetui gdu pavucontrol
   if [ $? -ne 0 ]; then
     errorHandling 4
   fi
