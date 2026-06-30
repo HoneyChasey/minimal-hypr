@@ -9,5 +9,6 @@
 Terminal = "ghostty"
 FileManager = "dolphin"
 Menu = "hyprlauncher"
-Browser = "flatpak run app.zen_browser.zen"
+-- Browser = "flatpak run app.zen_browser.zen"
+Browser = firefox
 WallapperApp = "hyprpaper"
