@@ -30,3 +30,11 @@ hl.gesture({
 --   name = "epic-mouse-v1",
 --   sensitivity = -0.5,
 --   })
+
+hl.config{
+  input = { -- config global for all input device. 
+    sensitivity = 0.0,
+    accel_profile = "flat",
+    -- force_no_accel = true, -- use it if really you think there is mouse acceleration
+  }
+}

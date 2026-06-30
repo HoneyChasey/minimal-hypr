@@ -105,6 +105,18 @@ setupNetworkManager(){
   sudo systemctl restart NetworkManager
 }
 
+
+setupWallPaper(){
+  sudo pacman -S awww
+
+  echo "installting mpvpaper and their dependencies"
+  sudo pacman -S mpv meson
+  
+  echo "installing the repo on your /Downloads repo"
+
+
+}
+
 main(){
   systemUpgrade
   installDependencies
