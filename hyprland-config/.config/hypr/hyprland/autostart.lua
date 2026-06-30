@@ -6,5 +6,4 @@
 hl.on("hyprland.start", function ()
   hl.exec_cmd("ghostty") -- Terminal
   hl.exec_cmd("waybar") -- Application for the status bar. Include also the workspace overview. Find config in ~/.config/waybar/. Don't need to launch at the begining we enable this service.
-  hl.exec_cmd("hyprpaper") -- Application for wallpaper
 end)
