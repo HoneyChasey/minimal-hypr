@@ -115,7 +115,18 @@ setupWallPaper(){
   
   echo "installing the repo on your /Downloads repo"
 
+}
 
+enableAudio(){
+  echo -e "${BLUE}==> Enabling services needed for screen sharing and audio...${NC}"
+  systemctl --user enable --now pipewire pipewire-pulse wireplumber xdg-desktop-portal-hyprland
+  if [ $? -ne 0 ]; then
+    errorHandling 3
+  fi
+  # Set a sane default volume so it's not muted on first boot
+  sleep 2  # give pipewire a moment to settle
+  wpctl set-volume @DEFAULT_SINK@ 50%
+  wpctl set-mute @DEFAULT_SINK@ 0
 }
 
 main(){
@@ -129,6 +140,8 @@ main(){
   installFonts
   enableServices
   setupNetworkManager
+  enableAudio
+  setupWallPaper
   echo -e "${GREEN}==> Done! System will reboot in 5 seconds.${NC}"
   echo -e "${YELLOW}Note: When you open your terminal after rebooting, Powerlevel10k will prompt you to configure it.${NC}"
   sleep 5
