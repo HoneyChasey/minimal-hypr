@@ -19,6 +19,9 @@ stow --target=$HOME --ignore='.github' waybar-config
 ```sh 
 stow --target=$HOME --ignore='.github' neovim-config
 ```
+```sh 
+stow --target=$HOME --ignore='.github' ghostty-config
+```
 
 Reboot your host. 
 If the waybar not launching, please read the read me in waybar-config/.config/waybar/readme.md
