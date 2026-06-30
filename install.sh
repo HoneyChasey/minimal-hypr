@@ -70,6 +70,7 @@ setupStow(){
   rm -rf ~/.config/waybar
   stow --target=$HOME hyprland-config || echo -e "${YELLOW}[WARN] Stow: hyprland-config failed, moving on.${NC}"
   stow --target=$HOME waybar-config || echo -e "${YELLOW}[WARN] Stow: waybar-config failed, moving on.${NC}"
+  stow --target=$HOME ghostty-config || echo -e "${YELLOW}[WARN] Stow: ghostty-config failed, moving on.${NC}"
 }
 
 installZenBrowser(){
