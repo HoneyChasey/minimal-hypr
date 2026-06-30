@@ -47,24 +47,24 @@ hl.bind(mainMod .. " + up",          hl.dsp.focus({ direction = "u" }))
 hl.bind(mainMod .. " + down",        hl.dsp.focus({ direction = "d" }))
 
 -- Workspaces (QWERTY Keyboard)
---for i = 1, 10 do
-    --local key = i % 10 -- 10 maps to key 0
-    --hl.bind(mainMod .. " + " .. key,             hl.dsp.focus({ workspace = i}))
-    --hl.bind(mainMod .. " + SHIFT + " .. key,     hl.dsp.window.move({ workspace = i }))
---end
+for i = 1, 10 do
+    local key = i % 10 -- 10 maps to key 0
+    hl.bind(mainMod .. " + " .. key,             hl.dsp.focus({ workspace = i}))
+    hl.bind(mainMod .. " + SHIFT + " .. key,     hl.dsp.window.move({ workspace = i }))
+end
 
 -- Workspaces (clavier AZERTY)
-local fr_keys = {
-  "ampersand", "eacute", "quotedbl", "apostrophe", "parenleft", -- 1..5
-  "minus", "egrave", "underscore", "ccedilla", "agrave", -- 6..10
-}
+--local fr_keys = {
+  --"ampersand", "eacute", "quotedbl", "apostrophe", "parenleft", -- 1..5
+  --"minus", "egrave", "underscore", "ccedilla", "agrave", -- 6..10
+--}
 
-for i, key in ipairs(fr_keys) do -- loop on key (start with i = 1)
+--for i, key in ipairs(fr_keys) do -- loop on key (start with i = 1)
   -- MOD + key  -> focus workspace i
-  hl.bind(mainMod .. " + " .. key, hl.dsp.focus({ workspace = i }))
+  --hl.bind(mainMod .. " + " .. key, hl.dsp.focus({ workspace = i }))
   -- MOD + SHIFT + key -> Déplacer fenêtre vers workspace i
-  hl.bind(mainMod .. " + SHIFT + " .. key, hl.dsp.window.move({ workspace = i, follow = false }))
-end
+  --hl.bind(mainMod .. " + SHIFT + " .. key, hl.dsp.window.move({ workspace = i, follow = false }))
+--end
 
 -- Lid action
 hl.bind("switch:on:Lid Switch", hl.dsp.exec_cmd("~/.local/share/quickshell-lockscreen/lock.sh"), {locked = true })
