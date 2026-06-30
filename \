@@ -44,9 +44,7 @@ awww img /path/to/your/wallpaper.gif
 
 This is the currently active backend — `mpvpaper` is commented out in `wallpaper.lua`.
 
-### Video wallpapers — mpvpaper (IMPLEMENTATION NOT FINISH - CURRENTLY IN BETA)
-
-**YOU NEED TO DOWNLOAD YOURSELF mpvpaper ON BUILD YOUR SELF FORM THEIR GIT**
+### Video wallpapers — mpvpaper
 
 To use video wallpapers instead, open `hyprland-config/.config/hypr/hyprland/wallpaper.lua`, comment out the `awww-daemon` line, and uncomment the `mpvpaper` line:
 
