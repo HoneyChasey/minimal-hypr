@@ -61,7 +61,9 @@
         "title<.*nvim.*>": "",
         "class<discord>": "", 
         "class<vscodium>": "", //to be tested  //#TODO
-        "class<steam>": ""
+        "class<steam>": "",
+        "class<proton.vpn.app.gtk>": "󰖂",
+        "class<librewolf>": ""
       }
     },
 
