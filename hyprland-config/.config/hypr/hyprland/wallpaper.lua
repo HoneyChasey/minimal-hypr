@@ -9,7 +9,10 @@
 
 
 -- AWWW 
-hl.exec_cmd("awww-daemon") -- Awww is a desktop wallpaper manager for img and gifs
+--hl.exec_cmd("awww-daemon") -- Awww is a desktop wallpaper manager for img and gifs
 -- If your goal is to use awww. Comment mpvpaper line and reboot your pc. Awww daemon will start of the next launch of hyprland.
 -- With awww, use the command awww img path to the wallpaper
-hl.exec_cmd("awww img ~/Pictures/wallappers/default.png") -- here to change wallpaper
+
+-- HYPRPAPER my beloved 
+
+hl.exec_cmd("hyprpaper")

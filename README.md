@@ -37,7 +37,10 @@ Minimal config hyprland for arch based distro. Is used the audio server *pipewri
 
 The wallpaper system is configured in `hyprland-config/.config/hypr/hyprland/wallpaper.lua`. Three backends are supported — pick one and comment out the others.
 
-### Animated images and GIFs — awww (currently active)
+### Hyprpaper (currently activte)
+Change your wallpaper to the conf file in the hyprpaper.conf file, write conf, save and use `hyprctl reload` to affect new changes.
+
+### Animated images and GIFs — awww (Not active)
 
 `awww` is started automatically via `wallpaper.lua` (`awww-daemon` is launched at session start). To set a wallpaper:
 
