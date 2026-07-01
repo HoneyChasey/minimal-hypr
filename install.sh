@@ -30,7 +30,7 @@ systemUpgrade(){
 
 installDependencies() {
   echo -e "${BLUE}==> Installing dependencies...${NC}"
-  sudo pacman -S --needed --noconfirm nwg-displays stow waybar flatpak hyprpaper \
+  sudo pacman -S --needed --noconfirm nwg-displays stow waybar flatpak bememu-wayland \
       ghostty alsa-utils unzip hyprlauncher brightnessctl sof-firmware \
       xdg-desktop-portal xdg-desktop-portal-gtk xdg-desktop-portal-hyprland \
       hyprshot pipewire wireplumber hyprlock networkmanager wpa_supplicant \
