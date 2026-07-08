@@ -30,7 +30,7 @@ systemUpgrade(){
 
 installDependencies() {
   echo -e "${BLUE}==> Installing dependencies...${NC}"
-  sudo pacman -S --needed --noconfirm nwg-displays stow waybar flatpak bememu-wayland \
+  sudo pacman -S --needed --noconfirm nwg-displays stow waybar flatpak bemenu-wayland \
       ghostty alsa-utils unzip hyprlauncher brightnessctl sof-firmware \
       xdg-desktop-portal xdg-desktop-portal-gtk xdg-desktop-portal-hyprland \
       hyprshot pipewire wireplumber hyprlock networkmanager wpa_supplicant \
@@ -137,7 +137,9 @@ main(){
   installLazydocker
   setupStow
   installZenBrowser
-  installFonts
+  # installFonts #TODO fix this and dl a version of the nerd-fonts directly on the git repo
+  # TODO, add firefox to download in the script and delete zen
+  # TODO add the
   enableServices
   setupNetworkManager
   enableAudio
