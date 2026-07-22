@@ -63,10 +63,6 @@ installPkgs() {
     #gst-plugins-bad gst-plugins-ugly
 
 
-configZsh(){
-  sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-}
-
 setupStow(){
   echo -e "${BLUE}==> Setting up stow for system dotfiles...${NC}"
   rm -rf ~/.config/hypr/
@@ -146,7 +142,6 @@ main(){
   systemUpgrade
   installPkgs
   installFlatpaks
-  configZsh
   setupStow
   installFonts
   # TODO create folder where i have custom font and adding them to the host pc (like have obisidan logo etc etc)
