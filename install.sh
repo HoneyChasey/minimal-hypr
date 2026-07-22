@@ -11,13 +11,34 @@ echo -e "${BLUE}=> Starting installation script...${NC}"
 
 errorHandling(){
   local returnCode=$1
+  local mode=$2
   case $returnCode in
     1) echo -e "${RED}[ERROR] Network Is Unreachable${NC}" ;;
     2) echo -e "${RED}[ERROR] Unkown Error${NC}" ;;
     3) echo -e "${RED}[ERROR] Cannot enable services${NC}" ;;
     4) echo -e "${RED}[ERROR] Package installation failed${NC}" ;;
   esac
+  [ "$mode" = "noexit" ] && return
   exit $returnCode
+}
+
+# Enables only the services in the given list whose unit file actually
+# exists, warning and skipping the rest (e.g. pipewire-pulse isn't always
+# installed/shipped as its own unit).
+checkAndEnableServices(){
+  local toEnable=()
+  for svc in "$@"; do
+    if systemctl --user list-unit-files "${svc}.service" 2>/dev/null | grep -q "^${svc}\.service"; then
+      toEnable+=("$svc")
+    else
+      echo -e "${YELLOW}[WARN] Service ${svc}.service not found, skipping.${NC}"
+    fi
+  done
+  if [ ${#toEnable[@]} -eq 0 ]; then
+    echo -e "${YELLOW}[WARN] No services to enable.${NC}"
+    return 0
+  fi
+  systemctl --user enable --now "${toEnable[@]}"
 }
 
 systemUpgrade(){
@@ -28,13 +49,9 @@ systemUpgrade(){
   fi
 }
 
-installDependencies() {
+installPkgs() {
   echo -e "${BLUE}==> Installing dependencies...${NC}"
-  sudo pacman -S --needed --noconfirm nwg-displays stow waybar flatpak bemenu-wayland \
-      ghostty alsa-utils unzip hyprlauncher brightnessctl sof-firmware \
-      xdg-desktop-portal xdg-desktop-portal-gtk xdg-desktop-portal-hyprland \
-      hyprshot pipewire wireplumber hyprlock networkmanager wpa_supplicant \
-      noto-fonts noto-fonts-cjk noto-fonts-emoji wget
+  sudo pacman -S --needed --noconfirm $(cat install/pkglist.txt)  
   if [ $? -ne 0 ]; then
     errorHandling 1
   fi
@@ -45,37 +62,24 @@ installDependencies() {
     #qt6-multimedia qt6-multimedia-ffmpeg gst-plugins-base gst-plugins-good \
     #gst-plugins-bad gst-plugins-ugly
 
-noNecessaryPackages(){
-  echo -e "${BLUE}==> Installation of no necessary packages...${NC}"
-  sudo pacman -S --needed --noconfirm bluetui gdu pavucontrol
-  if [ $? -ne 0 ]; then
-    errorHandling 4
-  fi
-}
 
-installZsh(){
-  echo -e "${BLUE}==> Installing Zsh and Powerlevel10k...${NC}"
-  sudo pacman -S --needed --noconfirm zsh
-  chsh -s $(which zsh)
-}
-
-installLazydocker(){
-  echo -e "${BLUE}==> Installing lazydocker...${NC}"
-  sudo pacman -S --needed --noconfirm lazydocker
+configZsh(){
+  sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 }
 
 setupStow(){
   echo -e "${BLUE}==> Setting up stow for system dotfiles...${NC}"
-  rm -rf ~/.config/hypr/hyprland.conf
+  rm -rf ~/.config/hypr/
   rm -rf ~/.config/waybar
   stow --target=$HOME hyprland-config || echo -e "${YELLOW}[WARN] Stow: hyprland-config failed, moving on.${NC}"
   stow --target=$HOME waybar-config || echo -e "${YELLOW}[WARN] Stow: waybar-config failed, moving on.${NC}"
   stow --target=$HOME ghostty-config || echo -e "${YELLOW}[WARN] Stow: ghostty-config failed, moving on.${NC}"
+  stow --target=$HOME zsh-config/ || echo -e "${YELLOW}[WARN] Stow: zsh-config failed, moving on.${NC}"
 }
 
-installZenBrowser(){
-  echo -e "${BLUE}==> Installing Zen Browser via flatpak...${NC}"
-  flatpak install -y flathub app.zen_browser.zen
+installFlatpaks(){
+  echo -e "${BLUE}==> Installing flatpaks${NC}"
+  flatpak install -y $(cat install/flatpakslist.txt)
 }
 
 installFonts(){
@@ -89,9 +93,9 @@ installFonts(){
 
 enableServices(){
   echo -e "${BLUE}==> Enabling services needed for screen sharing and audio...${NC}"
-  systemctl --user enable --now pipewire wireplumber xdg-desktop-portal-hyprland
+  checkAndEnableServices pipewire wireplumber xdg-desktop-portal-hyprland waybar
   if [ $? -ne 0 ]; then
-    errorHandling 3
+    errorHandling 3 noexit
   fi
 }
 
@@ -106,20 +110,9 @@ setupNetworkManager(){
   sudo systemctl restart NetworkManager
 }
 
-
-setupWallPaper(){
-  sudo pacman -S awww
-
-  echo "installting mpvpaper and their dependencies"
-  sudo pacman -S mpv meson
-  
-  echo "installing the repo on your /Downloads repo"
-
-}
-
 enableAudio(){
   echo -e "${BLUE}==> Enabling services needed for screen sharing and audio...${NC}"
-  systemctl --user enable --now pipewire pipewire-pulse wireplumber xdg-desktop-portal-hyprland
+  checkAndEnableServices pipewire pipewire-pulse wireplumber xdg-desktop-portal-hyprland
   if [ $? -ne 0 ]; then
     errorHandling 3
   fi
@@ -129,21 +122,37 @@ enableAudio(){
   wpctl set-mute @DEFAULT_SINK@ 0
 }
 
+setupWallpaper(){
+  read -p "Do you want to download the default wallpapers set (y/n)? " answer
+
+  if [[ "$answer" =~ ^[Yy]$ ]]; then
+      echo "Downloading wallpapers..."
+      (cd ~/Documents && git clone https://github.com/HoneyChasey/minimal-hypr-wallappers && stow --target=$HOME --ignore='.github' pictures)
+      echo "You will find the wallpapers in ~/pictures/wallpapers folder"
+      sleep 0.5
+  else
+      echo "Skipping wallpapers. As you want :("
+  fi
+}
+
 main(){
+  if ping -c 1 -W 2 1.1.1.1 &> /dev/null; then
+      :
+  else
+      echo -e "${RED}[ERROR] Network Is Unreachable, you need to be connected to internet to run this installation script${NC}"
+      exit 1
+  fi
+
   systemUpgrade
-  installDependencies
-  noNecessaryPackages
-  installZsh
-  installLazydocker
+  installPkgs
+  installFlatpaks
+  configZsh
   setupStow
-  installZenBrowser
-  # installFonts #TODO fix this and dl a version of the nerd-fonts directly on the git repo
-  # TODO, add firefox to download in the script and delete zen
-  # TODO add the
+  installFonts
+  # TODO create folder where i have custom font and adding them to the host pc (like have obisidan logo etc etc)
   enableServices
-  setupNetworkManager
   enableAudio
-  setupWallPaper
+  setupNetworkManager
   echo -e "${GREEN}==> Done! System will reboot in 5 seconds.${NC}"
   echo -e "${YELLOW}Note: When you open your terminal after rebooting, Powerlevel10k will prompt you to configure it.${NC}"
   sleep 5
