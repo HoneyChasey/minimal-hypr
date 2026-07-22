@@ -67,6 +67,7 @@ setupStow(){
   echo -e "${BLUE}==> Setting up stow for system dotfiles...${NC}"
   rm -rf ~/.config/hypr/
   rm -rf ~/.config/waybar
+  rm ~/.zshrc && ~/.oh-my-zsh/
   stow --target=$HOME hyprland-config || echo -e "${YELLOW}[WARN] Stow: hyprland-config failed, moving on.${NC}"
   stow --target=$HOME waybar-config || echo -e "${YELLOW}[WARN] Stow: waybar-config failed, moving on.${NC}"
   stow --target=$HOME ghostty-config || echo -e "${YELLOW}[WARN] Stow: ghostty-config failed, moving on.${NC}"
