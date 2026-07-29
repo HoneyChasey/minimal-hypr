@@ -33,7 +33,7 @@ hl.gesture({
 
 hl.config{
   input = { -- config global for all input device. 
-    sensitivity = 0.0,
+    sensitivity = 2.0,
     accel_profile = "flat",
     -- force_no_accel = true, -- use it if really you think there is mouse acceleration
   }
