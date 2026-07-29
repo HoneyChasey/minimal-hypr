@@ -67,25 +67,17 @@ setupStow(){
   echo -e "${BLUE}==> Setting up stow for system dotfiles...${NC}"
   rm -rf ~/.config/hypr/
   rm -rf ~/.config/waybar
+  rm -rf ~/.config/quickshell/
   rm ~/.zshrc && ~/.oh-my-zsh/
   stow --target=$HOME hyprland-config || echo -e "${YELLOW}[WARN] Stow: hyprland-config failed, moving on.${NC}"
-  stow --target=$HOME waybar-config || echo -e "${YELLOW}[WARN] Stow: waybar-config failed, moving on.${NC}"
+  stow --target=$HOME quickshell-bar || echo -e "${YELLOW}[WARN] Stow: waybar-config failed, moving on.${NC}"
   stow --target=$HOME ghostty-config || echo -e "${YELLOW}[WARN] Stow: ghostty-config failed, moving on.${NC}"
-  stow --target=$HOME zsh-config/ || echo -e "${YELLOW}[WARN] Stow: zsh-config failed, moving on.${NC}"
+  stow --target=$HOME zsh-config || echo -e "${YELLOW}[WARN] Stow: zsh-config failed, moving on.${NC}"
 }
 
 installFlatpaks(){
   echo -e "${BLUE}==> Installing flatpaks${NC}"
   flatpak install -y $(cat install/flatpakslist.txt)
-}
-
-installFonts(){
-  echo -e "${BLUE}==> Installing CascadiaCode Nerd Font...${NC}"
-  wget -q https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/CascadiaCode.zip
-  mkdir -p ~/.local/share/fonts/CascadiaCode
-  unzip -o CascadiaCode.zip -d ~/.local/share/fonts/CascadiaCode
-  rm CascadiaCode.zip
-  fc-cache -fv
 }
 
 enableServices(){
@@ -144,8 +136,6 @@ main(){
   installPkgs
   installFlatpaks
   setupStow
-  installFonts
-  # TODO create folder where i have custom font and adding them to the host pc (like have obisidan logo etc etc)
   enableServices
   enableAudio
   setupNetworkManager

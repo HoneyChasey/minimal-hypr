@@ -1,5 +1,6 @@
 nwg-displays 
-stow waybar 
+stow 
+quickshell
 flatpak 
 bemenu-wayland
 ghostty 
@@ -21,6 +22,7 @@ wpa_supplicant
 noto-fonts 
 noto-fonts-cjk 
 noto-fonts-emoji 
+ttf-jetbrains-mono-nerd
 wget
 bluetui
 gdu 
