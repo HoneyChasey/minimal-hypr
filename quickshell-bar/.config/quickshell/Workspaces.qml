@@ -49,10 +49,11 @@ RowLayout {
                         required property var modelData
                         property string appId: modelData
 
-                        property var glyphMap: ({
+                        property var glyphMap: ({ // use hyprctl clients | grep -i class to find the class
                             "discord": "󰙯",
                             "steam": "",
-                            "org.mozilla.firefox": ""
+                            "org.mozilla.firefox": "",
+                            "org.kde.dolphin": ""
                         })
                         property string glyph: glyphMap[appId] ?? ""
                         property string svgPath: "root:/icons/" + appId + ".svg"
