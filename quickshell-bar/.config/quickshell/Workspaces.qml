@@ -53,7 +53,8 @@ RowLayout {
                             "discord": "󰙯",
                             "steam": "",
                             "org.mozilla.firefox": "",
-                            "org.kde.dolphin": ""
+                            "org.kde.dolphin": "",
+                            "org.pwmt.zathura": "󱔘" 
                         })
                         property string glyph: glyphMap[appId] ?? ""
                         property string svgPath: "root:/icons/" + appId + ".svg"
