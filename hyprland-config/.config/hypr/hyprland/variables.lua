@@ -10,5 +10,5 @@ Terminal = "gdbus call --session --dest com.mitchellh.ghostty --object-path /com
 FileManager = "dolphin"
 Menu = "bemenu-run -b"
 -- Browser = "flatpak run app.zen_browser.zen"
-Browser = "flatpak run org.mozilla.firefox"
+Browser = "flatpak run app.zen_browser.zen"
 WallapperApp = "hyprpaper"
