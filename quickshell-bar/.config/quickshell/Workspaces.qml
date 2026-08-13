@@ -53,7 +53,7 @@ RowLayout {
                             "discord": "󰙯",
                             "steam": "",
                             "org.mozilla.firefox": "",
-                            "org.kde.dolphin": "",
+                            "thunar": "",
                             "org.pwmt.zathura": "󱔘" 
                         })
                         property string glyph: glyphMap[appId] ?? ""

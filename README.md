@@ -4,6 +4,18 @@
 
 # Install
 
+
+Clone the repo
+```sh
+git clone https://github.com/HoneyChasey/minimal-hypr.git
+```
+
+If you want the recommanded wallpapers use instead this command: 
+
+```sh
+git clone --recursive https://github.com/HoneyChasey/minimal-hypr.git
+```
+
 This install will perform with a install script, and stow. 
 0. Launch a full update of your system (pacman -Suy) BEFORE LAUNCHING bootstrap.sh
 2. After, Launch the 2 stow commands
@@ -22,6 +34,12 @@ stow --target=$HOME --ignore='.github' neovim-config
 ```sh 
 stow --target=$HOME --ignore='.github' ghostty-config
 ```
+
+If you have downloaded wallpapers, please run also this:
+```sh
+(mkdir -p "$HOME/Pictures" && cd minimal-hypr-wallpapers && stow --target=$HOME --ignore='.github' pictures)
+```
+> If you want update wallpapers list, please use "updateWallpapers.sh" script
 
 Reboot your host. 
 If the waybar not launching, please read the read me in waybar-config/.config/waybar/readme.md

@@ -124,3 +124,12 @@ case "$OSTYPE" in
     [ -x /home/linuxbrew/.linuxbrew/bin/brew ] && eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
     ;;
 esac
+
+. "$HOME/.local/share/../bin/env"
+
+# bun completions
+[ -s "/home/arch-emjoyer/.bun/_bun" ] && source "/home/arch-emjoyer/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"

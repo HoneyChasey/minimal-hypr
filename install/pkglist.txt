@@ -34,3 +34,4 @@ snap-pac
 snapper
 stow
 fastfetch
+thunar
