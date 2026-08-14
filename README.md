@@ -10,7 +10,7 @@ Clone the repo
 git clone https://github.com/HoneyChasey/minimal-hypr.git
 ```
 
-If you want the recommanded wallpapers use instead this command: 
+If you want the recommended wallpapers use instead this command: 
 
 ```sh
 git clone --recursive https://github.com/HoneyChasey/minimal-hypr.git
