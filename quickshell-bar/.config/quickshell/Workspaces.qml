@@ -54,7 +54,9 @@ RowLayout {
                             "steam": "",
                             "org.mozilla.firefox": "",
                             "thunar": "",
-                            "org.pwmt.zathura": "󱔘" 
+                            "org.pwmt.zathura": "󱔘",
+                            "nvim": "" // TODO fix this. How change the logo based on the window title
+
                         })
                         property string glyph: glyphMap[appId] ?? ""
                         property string svgPath: "root:/icons/" + appId + ".svg"
