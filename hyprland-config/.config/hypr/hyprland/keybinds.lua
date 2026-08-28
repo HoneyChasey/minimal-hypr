@@ -6,7 +6,7 @@ local mainMod = "SUPER"
 hl.bind(mainMod .. " + A",           hl.dsp.exec_cmd(Terminal))
 hl.bind(mainMod .. " + E",           hl.dsp.exec_cmd(FileManager))
 hl.bind(mainMod .. " + R",           hl.dsp.exec_cmd(Menu))
-hl.bind(mainMod .. " + B",           hl.dsp.exec_cmd(Browser .. " --new-window"))
+hl.bind(mainMod .. " + B",           hl.dsp.exec_cmd(Browser))
 hl.bind(mainMod .. " + SHIFT + B",   hl.dsp.exec_cmd(Browser .. " --private-window"))
 
 -- Session

@@ -1,5 +1,4 @@
 nwg-displays 
-stow 
 quickshell
 flatpak 
 bemenu-wayland
@@ -24,14 +23,10 @@ noto-fonts-cjk
 noto-fonts-emoji 
 ttf-jetbrains-mono-nerd
 wget
-bluetui
-gdu 
 pavucontrol
 zsh
-lazydocker
 curl
-snap-pac
 snapper
 stow
 fastfetch
-thunar
+yazi
