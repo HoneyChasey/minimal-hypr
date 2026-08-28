@@ -1,3 +1,0 @@
-flathub com.discordapp.Discord
-flathub app.zen_browser.zen
-flathub md.obsidian.Obsidian

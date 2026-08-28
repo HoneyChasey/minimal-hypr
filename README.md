@@ -23,16 +23,8 @@ This install will perform with a install script, and stow.
 ```sh 
 stow --target=$HOME --ignore='.github' hyprland-config
 ```
-
 ```sh 
-stow --target=$HOME --ignore='.github' waybar-config
-```
-
-```sh 
-stow --target=$HOME --ignore='.github' neovim-config
-```
-```sh 
-stow --target=$HOME --ignore='.github' ghostty-config
+stow --target=$HOME --ignore='.github' quickshell-bar
 ```
 
 If you have downloaded wallpapers, please run also this:
