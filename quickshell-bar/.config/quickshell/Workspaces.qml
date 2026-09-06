@@ -55,7 +55,8 @@ RowLayout {
                             "org.mozilla.firefox": "",
                             "thunar": "",
                             "org.pwmt.zathura": "󱔘",
-                            "nvim": "" // TODO fix this. How change the logo based on the window title
+                            "nvim": "", // TODO fix this. How change the logo based on the window title
+                            "com.moonlight_stream.Moonlight": ""
 
                         })
                         property string glyph: glyphMap[appId] ?? ""
