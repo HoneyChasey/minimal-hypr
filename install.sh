@@ -132,6 +132,12 @@ main(){
       exit 1
   fi
 
+  setupVicinae(){
+    echo "Downloading vicinae, with installation script" #TODO wait the release of vicinae on pacman to remove this part of script
+    curl -fsSL https://vicinae.com/install | bash
+  }
+
+
   systemUpgrade
   installPkgs
   installFlatpaks
@@ -139,6 +145,7 @@ main(){
   enableServices
   enableAudio
   setupNetworkManager
+  setupVicinae
   echo -e "${GREEN}==> Done! System will reboot in 5 seconds.${NC}"
   echo -e "${YELLOW}Note: When you open your terminal after rebooting, Powerlevel10k will prompt you to configure it.${NC}"
   sleep 5
